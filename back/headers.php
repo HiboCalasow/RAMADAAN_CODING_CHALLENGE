@@ -9,6 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="./img/bidhaan icon-01.png" rel="icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <title>BIDHAAN</title>
 
     <!-- Custom fonts for this template-->
@@ -43,7 +46,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="dashboard.html">
+                <a class="nav-link" href="dashboard.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -62,30 +65,31 @@
 
 
             <!-- Nav Item - Tables -->
+       
+ 
             <li class="nav-item">
-                <a class="nav-link" href="users.php">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>users</span></a>
-            </li>
-                   <!-- Divider -->
-                   <hr class="sidebar-divider">
-            <li class="nav-item">
-                <a class="nav-link" href="customer.php">
+                <a class="nav-link" href="addCustomer.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Customer</span></a>
             </li>
-                   <!-- Divider -->
-                   <hr class="sidebar-divider">
-            <li class="nav-item">
-                <a class="nav-link" href="products.php">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Products</span></a>
-            </li>
+            
+
+                              <!-- Divider -->
+                              <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link" href="category.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Category</span></a>
             </li>
+                              <!-- Divider -->
+                              <hr class="sidebar-divider">
+            <li class="nav-item">
+                <a class="nav-link" href="items.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Items</span></a>
+            </li>
+                              <!-- Divider -->
+                              <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link" href="logout.php">
                     <i class="fas fa-fw fa-table"></i>
@@ -317,6 +321,6 @@
                 <div class="container-fluid">
                     
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">here is users</h1>
+                  
 
                     <!-- main contant -->

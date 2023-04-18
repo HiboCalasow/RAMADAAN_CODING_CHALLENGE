@@ -2,7 +2,7 @@
 
 <?php
 include("headers.php");
-
+include "header.php";
  include "connect.php";
 ?>
 

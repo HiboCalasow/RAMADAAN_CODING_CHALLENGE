@@ -8,6 +8,7 @@ $q=mysqli_query($connection,"SELECT MAX(catId) AS catId from category");
 $data=mysqli_fetch_array($q);
 $catid=$data['catId']+1;
 ?>
+  <h1 class="h3 mb-4 text-gray-800">here is category</h1>
 <div class="main">
 <div class="container-fluid mt-3">
 <div class="card">
@@ -24,7 +25,7 @@ $catid=$data['catId']+1;
     <?php
      if(isset($_POST['btn_save'])){
         $catname=$_POST['catName'];
-        $query=mysqli_query($conn,"INSERT INTO category VALUES(NULL,'$catname',NULL)");
+        $query=mysqli_query($connection,"INSERT INTO category VALUES(NULL,'$catname',NULL)");
         echo "<div class='alert alert-success mt-5'><b>".$catname."</b> has been created</div>";
      };
      ?>
