@@ -8,8 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="./img/bidhaan icon-01.png" rel="icon">
     <title>BIDHAAN</title>
 
     <!-- Custom fonts for this template-->
@@ -64,23 +63,33 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="users.html">
+                <a class="nav-link" href="users.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>users</span></a>
             </li>
                    <!-- Divider -->
                    <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link" href="customer.html">
+                <a class="nav-link" href="customer.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Customer</span></a>
             </li>
                    <!-- Divider -->
                    <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link" href="products.html">
+                <a class="nav-link" href="products.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Products</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="category.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Category</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <button class="btn btn-danger">Logout</button></a>
             </li>
 
             <!-- Divider -->
@@ -308,15 +317,14 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">here is customers</h1>
-
+                    <h1 class="h3 mb-4 text-gray-800">here is products</h1>
 
 
 
                     
                     <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-   Add Customer
+    Add Product
   </button>
   
   <!-- Modal -->

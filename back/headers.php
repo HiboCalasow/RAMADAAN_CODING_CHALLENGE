@@ -1,23 +1,3 @@
-<?php
-include 'connect.php';
-if(isset($_POST['submit'])){
-    $user_FullName = $_POST['user_FullName'];
-    $tell = $_POST['Tell'];
-    $user_Address=$_POST['user_Address'];
-    $user_Email=$_POST['user_Email'];
-
-    $sql = "insert into `users` (user_FullName,Tell,user_Address,user_Email) 
-             values ('$user_FullName','$tell', '$user_Address','$user_Email')";
-    $result = mysqli_query($connection,$sql);
-
-    if($result){
-        header('location: users.php');
-    }else{
-        die(mysqli_error($connection));
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,9 +8,7 @@ if(isset($_POST['submit'])){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <link href="./img/bidhaan icon-01.png" rel="icon">
     <title>BIDHAAN</title>
 
     <!-- Custom fonts for this template-->
@@ -65,7 +43,7 @@ if(isset($_POST['submit'])){
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="dashboard.php">
+                <a class="nav-link" href="dashboard.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -102,6 +80,16 @@ if(isset($_POST['submit'])){
                 <a class="nav-link" href="products.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Products</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="category.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Category</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <button class="btn btn-danger">Logout</button></a>
             </li>
 
             <!-- Divider -->
@@ -327,179 +315,8 @@ if(isset($_POST['submit'])){
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
+                    
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">here is users</h1>
 
                     <!-- main contant -->
-
-                    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Add User
-</button>
-<form action="" method="post">
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-  
-      
-     <div class="row">   
-        <div class="col-6">
-            <label for="exampleFormControlInput1" class="form-label">Full Name</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Full Name" name="user_FullName">
-          </div>
-          <div class="col-6">
-            <label for="exampleFormControlInput1" class="form-label">Tell</label>
-            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Enter Tell" name="Tell">
-          </div>
-    </div>
-    
-    <div class="row">   
-        <div class="col-6">
-            <label for="exampleFormControlInput1" class="form-label">Address</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Address" name="user_Address">
-          </div>
-          <div class="col-6">
-            <label for="exampleFormControlInput1" class="form-label">Email</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Email" name="user_Email">
-          </div>
-    </div>
-     <div class="row">
-        <label for="exampleDataList" class="form-label">Gender</label>
-<select class="form-control mx-3 col-10" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
-
-  <option value="Male">Choose</option>
-  <option value="Male">Male</option>
-  <option value="Female">Female</option>
-
-</select> 
-    </div>
-    </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary"  name="submit">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">User Name</th>
-      <th scope="col"> Tell</th>
-      <th scope="col">Address</th>
-      <th scope="col">Email</th>
-      <!-- <th scope="col">Gender</th> -->
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody id="contact-list">
-  <?php 
-            $sql='select user_ID, user_FullName,Tell,user_Address,user_Email from users';
-            $result=mysqli_query($connection,$sql);
-            if($result){
-                while($row=mysqli_fetch_assoc($result)){
-                    $id=$row['user_ID'];
-                    $user_FullName = $row['user_FullName'];
-                    $tell = $row['Tell'];
-                    $user_Address=$row['user_Address'];
-                    $user_Email=$row['user_Email'];
-                
-
-                    echo' 
-                    <tr>
-                    <td>'.$id.'</td>
-                    <td>'.$user_FullName.'</td>
-                    <td>'.$tell.'</td>
-                    <td>'.$user_Address.'</td>
-                    <td>'.$user_Email.'</td>
-                      <td>
-                        <button class="btn btn-info"><a href="updated.php?updated_id='.$id.'"style="color:white;">Edit</a></button>
-                        <button class="btn btn-danger"><a href="deleted.php?deleted_id='.$id.'" style="color:white;">Delete</a></button>
-                        
-                      </td>
-                  </tr>
-                ';
-                }
-            }
-            
-            
-            ?>
-        
- 
-  </tbody>
-</table>
-
-
-                    <!--end  main contant -->
-
-                </div>
-                <!-- /.container-fluid -->
-
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <!-- <script src="js/sb-admin-2.min.js"></script> -->
-    <script src="../back/js/sb-admin-2.js"></script>
-
-</body>
-
-</html>

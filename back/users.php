@@ -1,13 +1,14 @@
 <?php
-include 'connect.php';
+include "./connect.php";
 if(isset($_POST['submit'])){
     $user_FullName = $_POST['user_FullName'];
     $tell = $_POST['Tell'];
     $user_Address=$_POST['user_Address'];
     $user_Email=$_POST['user_Email'];
+    $Gender=$_POST['gender'];
 
-    $sql = "insert into `users` (user_FullName,Tell,user_Address,user_Email) 
-             values ('$user_FullName','$tell', '$user_Address','$user_Email')";
+    $sql = "insert into `users` (user_FullName,Tell,user_Address,user_Email,Gender) 
+             values ('$user_FullName','$tell', '$user_Address','$user_Email','$Gender')";
     $result = mysqli_query($connection,$sql);
 
     if($result){
@@ -17,7 +18,6 @@ if(isset($_POST['submit'])){
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,9 +28,7 @@ if(isset($_POST['submit'])){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <link href="./img/bidhaan icon-01.png" rel="icon">
     <title>BIDHAAN</title>
 
     <!-- Custom fonts for this template-->
@@ -65,7 +63,7 @@ if(isset($_POST['submit'])){
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="dashboard.php">
+                <a class="nav-link" href="dashboard.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -99,9 +97,19 @@ if(isset($_POST['submit'])){
                    <!-- Divider -->
                    <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link" href="products.php">
+                <a class="nav-link" href="products.html">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Products</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="category.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Category</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <button class="btn btn-danger">Logout</button></a>
             </li>
 
             <!-- Divider -->
@@ -334,10 +342,10 @@ if(isset($_POST['submit'])){
                     <!-- main contant -->
 
                     <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="submit" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Add User
 </button>
-<form action="" method="post">
+<form action="users.php" method="post" >
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -347,38 +355,36 @@ if(isset($_POST['submit'])){
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-  
+ 
+    
       
-     <div class="row">   
+  <div class="row">   
         <div class="col-6">
             <label for="exampleFormControlInput1" class="form-label">Full Name</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Full Name" name="user_FullName">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Full Name" name="user_FullName" required>
           </div>
           <div class="col-6">
             <label for="exampleFormControlInput1" class="form-label">Tell</label>
-            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Enter Tell" name="Tell">
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Enter Tell" name="Tell" required>
           </div>
     </div>
     
     <div class="row">   
         <div class="col-6">
             <label for="exampleFormControlInput1" class="form-label">Address</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Address" name="user_Address">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Address" name="user_Address" required>
           </div>
           <div class="col-6">
             <label for="exampleFormControlInput1" class="form-label">Email</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Email" name="user_Email">
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Email" name="user_Email" required>
           </div>
     </div>
      <div class="row">
-        <label for="exampleDataList" class="form-label">Gender</label>
-<select class="form-control mx-3 col-10" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
-
-  <option value="Male">Choose</option>
-  <option value="Male">Male</option>
-  <option value="Female">Female</option>
-
-</select> 
+    <div class="col-4">
+    <label  class="form-label  mt-5">Gender</label><br>
+                    <input type="radio" name="gender" value="male" class="ml-4" checked> male<br>
+                    <input type="radio" name="gender" value="female" class="ml-4" > female
+    </div>
     </div>
     </form>
       </div>
@@ -398,13 +404,14 @@ if(isset($_POST['submit'])){
       <th scope="col"> Tell</th>
       <th scope="col">Address</th>
       <th scope="col">Email</th>
+      <th scope="col">Gender</th>
       <!-- <th scope="col">Gender</th> -->
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody id="contact-list">
   <?php 
-            $sql='select user_ID, user_FullName,Tell,user_Address,user_Email from users';
+            $sql='select user_ID, user_FullName,Tell,user_Address,user_Email, Gender from users';
             $result=mysqli_query($connection,$sql);
             if($result){
                 while($row=mysqli_fetch_assoc($result)){
@@ -413,7 +420,9 @@ if(isset($_POST['submit'])){
                     $tell = $row['Tell'];
                     $user_Address=$row['user_Address'];
                     $user_Email=$row['user_Email'];
-                
+                    $Gender=$row['Gender'];
+                ?>
+                <?php
 
                     echo' 
                     <tr>
@@ -422,18 +431,21 @@ if(isset($_POST['submit'])){
                     <td>'.$tell.'</td>
                     <td>'.$user_Address.'</td>
                     <td>'.$user_Email.'</td>
-                      <td>
-                        <button class="btn btn-info"><a href="updated.php?updated_id='.$id.'"style="color:white;">Edit</a></button>
-                        <button class="btn btn-danger"><a href="deleted.php?deleted_id='.$id.'" style="color:white;">Delete</a></button>
-                        
-                      </td>
-                  </tr>
-                ';
+                    <td>'.$Gender.'</td>
+            '
+                    ?>
+                    <td>
+                       <a href="itemEdit.php?itemId=<?php echo $row['itemId'];?>" class=" btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update</a>
+                       <a onclick="return confirm('Are You Sure To Delete [<?php echo $row['user_FullName'] ;?>]?')" href="usersDelete.php?id=<?php echo $row['user_ID'];?> " class=" btn btn-danger">Delete</a>
+                    <?php
+                       echo "</tr>";
+                
+                
                 }
             }
             
             
-            ?>
+            ?>;
         
  
   </tbody>
