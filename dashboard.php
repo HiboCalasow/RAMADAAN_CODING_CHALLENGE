@@ -8,8 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="./img/bidhaan icon-01.png" rel="icon">
     <title>BIDHAAN</title>
 
     <!-- Custom fonts for this template-->
@@ -64,25 +63,24 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="users.html">
+                <a class="nav-link" href="users.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>users</span></a>
             </li>
                    <!-- Divider -->
                    <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link" href="customer.html">
+                <a class="nav-link" href="customer.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Customer</span></a>
             </li>
                    <!-- Divider -->
                    <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link" href="products.html">
+                <a class="nav-link" href="products.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Products</span></a>
             </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -308,93 +306,92 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">here is customers</h1>
+                    <h1 class="h3 mb-4 text-gray-800">here is dashboard</h1>
+                    <div class="row">
 
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Earnings (Monthly)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                        <!-- Earnings (Annual) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Earnings (Annual)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                        <!-- Tasks Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="progress progress-sm mr-2">
+                                                        <div class="progress-bar bg-info" role="progressbar"
+                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                    
-                    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-   Add Customer
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-    
-     
-       <div class="row">   
-          <div class="col-6">
-              <label for="exampleFormControlInput1" class="form-label">Full Name</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Full Name">
-            </div>
-            <div class="col-6">
-              <label for="exampleFormControlInput1" class="form-label">Tell</label>
-              <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Enter Tell">
-            </div>
-      </div>
-      <div class="row">   
-          <div class="col-6">
-              <label for="exampleFormControlInput1" class="form-label">Address</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Address">
-            </div>
-            <div class="col-6">
-              <label for="exampleFormControlInput1" class="form-label">Email</label>
-              <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Enter Email">
-            </div>
-      </div>
-      <div class="row">
-          <label for="exampleDataList" class="form-label">Gender</label>
-  <select class="form-control mx-3 col-10" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
-  
-    <option value="Male">Choose</option>
-    <option value="Male">Male</option>
-    <option value="Female">Female</option>
-  
-  </select>
-      </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">full Name</th>
-        <th scope="col">Tell</th>
-        <th scope="col">Address</th>
-        <th scope="col">Email</th>
-        <th scope="col">Gender</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Ayuub Awil Farax</td>
-        <td>61111111</td>
-        <td>hodan</td>
-        <td>ayuub@gmail.com</td>
-        <td>Male</td>
-      </tr>
-    
-   
-    </tbody>
-  </table>
-
+                        <!-- Pending Requests Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Pending Requests</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
 
@@ -405,7 +402,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span style="font-size: 20px;" >Copyright &copy; <span class=" text-success fs-1 " style="font-size: 20px; font-weight: bold;">BIDHAAN</span> 2023</span>
                     </div>
                 </div>
             </footer>

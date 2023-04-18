@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>BIDHAAN</title>
 
     <!-- Custom fonts for this template-->
@@ -61,23 +62,23 @@
           
 
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="users.html">
+             <!-- Nav Item - Tables -->
+             <li class="nav-item">
+                <a class="nav-link" href="users.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>users</span></a>
             </li>
                    <!-- Divider -->
                    <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link" href="customer.html">
+                <a class="nav-link" href="customer.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Customer</span></a>
             </li>
                    <!-- Divider -->
                    <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link" href="products.html">
+                <a class="nav-link" href="products.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Products</span></a>
             </li>
@@ -307,7 +308,93 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+                    <h1 class="h3 mb-4 text-gray-800">here is products</h1>
+
+
+
+                    
+                    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Add Product
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+    
+     
+       <div class="row">   
+          <div class="col-6">
+              <label for="exampleFormControlInput1" class="form-label">Product Name</label>
+              <input type="text" class="form-control" id="product_Name" placeholder="Enter product Name">
+            </div>
+            <div class="col-6">
+              <label for="exampleFormControlInput1" class="form-label">Product Type</label>
+              <input type="text" class="form-control" id="Product_Type" placeholder="Enter Type">
+            </div>
+      </div>
+      <div class="row">   
+          <div class="col-6">
+              <label for="exampleFormControlInput1" class="form-label">Product Price</label>
+              <input type="number" class="form-control" id="Product_Price" placeholder="Enter Product Price">
+            </div>
+            <div class="col-6">
+              <label for="exampleFormControlInput1" class="form-label">Email</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Email">
+            </div>
+      </div>
+      <div class="row">
+          <label for="exampleDataList" class="form-label">Gender</label>
+  <select class="form-control mx-3 col-10" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+  
+    <option value="Male">Choose</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  
+  </select>
+      </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- start of table DB  -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">full Name</th>
+        <th scope="col">Tell</th>
+        <th scope="col">Address</th>
+        <th scope="col">Email</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Ayuub Awil Farax</td>
+        <td>61111111</td>
+        <td>hodan</td>
+        <td>ayuub@gmail.com</td>
+        <td>Male</td>
+      </tr>
+    
+   
+    </tbody>
+  </table>
+    <!-- start of table DB  -->
 
                 </div>
                 <!-- /.container-fluid -->

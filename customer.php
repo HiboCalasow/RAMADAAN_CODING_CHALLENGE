@@ -61,28 +61,27 @@
 
           
 
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="users.html">
+  <!-- Nav Item - Tables -->
+  <li class="nav-item">
+                <a class="nav-link" href="users.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>users</span></a>
             </li>
                    <!-- Divider -->
                    <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link" href="customer.html">
+                <a class="nav-link" href="customer.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Customer</span></a>
             </li>
                    <!-- Divider -->
                    <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link" href="products.html">
+                <a class="nav-link" href="products.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Products</span></a>
             </li>
-
+            
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
