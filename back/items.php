@@ -6,7 +6,7 @@ include("connect.php");
 ?>
   <h1 class="h3 mb-4 text-gray-800">here is Items</h1>
 <div class="main">
-    <div class="container-fluid mt-5">
+    <div class="container-fluid mt-5 mb-5">
         <div class="card">
             <div class="card-header p-1 bg-success text-white">item registration</div>
             <div class="card-body">
@@ -40,7 +40,7 @@ include("connect.php");
                     <label for="" class="form-label">Date Created</label>
                     <input type="date" name="dateCreated" class="form-control form-control-sm" >
                     
-                    <input type="submit" value="Save Item" name="save_item" class="btn btn-primary btn-sm mt-2">
+                    <input type="submit" value="Save Item" name="save_item" class="btn btn-primary btn-sm mt-2" name="convert">
 
                     <a href="itemsVeiw.php" class="btn btn-danger btn-sm mt-2">View Item</a>
                 </form>
@@ -52,7 +52,7 @@ include("connect.php");
                     $dateCreated=$_POST['dateCreated'];
                
 
-                    $q=mysqli_query($conn,"INSERT INTO items VALUES(NULL,'$itemName','$description','$dateCreated','$catId')");
+                    $q=mysqli_query($connection,"INSERT INTO items VALUES(NULL,'$itemName','$description','$dateCreated','$catId')");
                     if($q){
                         echo "<div class='alert alert-success p-1 mt-5'>".$itemName." has been created successfully</div>";
                     }
@@ -62,6 +62,23 @@ include("connect.php");
 
                 }
                 ?>
+                                   <?php
+                   if(isset($_POST['convert']));
+                   {
+                    // $cName=@$_POST['cName'];
+                    @$itemName=htmlspecialchars($itemName);
+                    $itemName=rawurlencode($itemName);
+                    @$description=htmlspecialchars($description);
+                    $description=rawurlencode($description);
+                    @$catId=htmlspecialchars($catId);
+                    $catId=rawurlencode($catId);
+                    @$dateCreated=htmlspecialchars($dateCreated);
+                    $dateCreated=rawurlencode($dateCreated);  
+                    @$convert=file_get_contents('https://translate.google.com/translate_tts?ie=UTF-8&client=gtx&q='.$itemName.$catId. $description. $dateCreated.'&tl=en-IN');
+                    $audio_player="<audio style='display: none;' controls='controls' autoplay><source src='data:audio/mpeg;base64,".base64_encode($convert)."'></audio>";
+                   }
+                   echo $audio_player;
+                   ?>
             </div>
         </div>
     </div>

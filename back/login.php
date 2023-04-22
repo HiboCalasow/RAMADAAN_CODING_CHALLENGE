@@ -39,7 +39,7 @@ include "./connect.php";
          <h1 class="bg-success text-white text-center " >Admin Login</h1>             
         </div>
         <div class="card-body bg-light">
-            <form action="index.php" method="post">
+            <form action="login.php" method="post">
                 <label for="user" class="form-label mt-3"><b>User Name</b></label>
                 <input type="text" placeholder="Enter User Name" class="form-control" name="username">
                 <label class="form-label mt-4"><b>Password</b></label>
@@ -66,7 +66,7 @@ include "./connect.php";
                     else{
                         $_SESSION['user']=$_POST['username'];
                         $_SESSION['status']=1;
-                        header("location:dashboard.html");
+                        header("location:dashboard.php");
                     }
 
                 }

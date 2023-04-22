@@ -1,3 +1,6 @@
+<?php
+ include "auth.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -331,12 +334,14 @@
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                 <?php
                                                 include "connect.php";
+                                                
 
                                                 $query= "SELECT cId FROM  customers  ORDER BY cId";
                                                 $query_run = mysqli_query($connection,$query);
                                                 $row = mysqli_num_rows($query_run);
                                                 echo '<h1>'.$row.'</h1>'
                                                 ?>
+
                                             </div>
                                         </div>
                                         <div class="col-auto">
