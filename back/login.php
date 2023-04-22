@@ -43,7 +43,8 @@ include "./connect.php";
                 <label for="user" class="form-label mt-3"><b>User Name</b></label>
                 <input type="text" placeholder="Enter User Name" class="form-control" name="username">
                 <label class="form-label mt-4"><b>Password</b></label>
-                <input type="text" placeholder="Enter Password" class="form-control" name="password">
+              <!--password correct               -->
+               <input type="password" placeholder="Enter Password" class="form-control" name="password">
                 <input type="submit" class="form-control bg-success fs-4 mt-3 text-center text-white p-2" value="Login" name="btn_login">             
                 <input type="checkbox" checked="checked" name="remember" class="mt-3" value="Remember me"> Remember me
              
